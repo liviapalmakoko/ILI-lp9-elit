@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/livia/**)",
+      "Bash(git config *)",
+      "Bash(ssh -o StrictHostKeyChecking=no -o BatchMode=yes -T git@github.com)"
+    ]
+  }
+}
