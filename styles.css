@@ -1,7 +1,35 @@
 /* =========================================================
    ELIT MEMBERS — Landing Page
    Paleta oficial extraída da marca
+   ---------------------------------------------------------
+   TIPOGRAFIA: o cliente usa Gotham (fonte comercial, não
+   disponível no Google Fonts). Usamos Montserrat como
+   substituto próximo. Para usar a Gotham real, coloque os
+   arquivos em assets/fonts/ e descomente o bloco abaixo —
+   as variáveis --font-* já priorizam 'Gotham'.
    ========================================================= */
+/*
+@font-face {
+  font-family: 'Gotham'; font-weight: 400; font-style: normal;
+  src: url('assets/fonts/Gotham-Book.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gotham'; font-weight: 500; font-style: normal;
+  src: url('assets/fonts/Gotham-Medium.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gotham'; font-weight: 700; font-style: normal;
+  src: url('assets/fonts/Gotham-Bold.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gotham'; font-weight: 800 900; font-style: normal;
+  src: url('assets/fonts/Gotham-Black.woff2') format('woff2');
+  font-display: swap;
+}
+*/
 :root {
   --deep: #0E4047;      /* petróleo profundo  */
   --deep-2: #0A2F35;    /* petróleo + escuro  */
@@ -14,9 +42,9 @@
   --ink: #0b1f22;
   --white: #ffffff;
 
-  --font-body: 'Poppins', system-ui, sans-serif;
-  --font-display: 'Anton', 'Poppins', sans-serif;
-  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Gotham', 'Montserrat', system-ui, sans-serif;
+  --font-display: 'Gotham', 'Montserrat', system-ui, sans-serif;
+  --font-serif: 'Gotham', 'Montserrat', system-ui, sans-serif;
 
   --maxw: 1160px;
   --radius: 16px;
@@ -56,15 +84,15 @@ a { color: inherit; text-decoration: none; }
 
 /* ---------- Typography helpers ---------- */
 .display {
-  font-family: var(--font-display); font-weight: 400;
-  font-size: clamp(2.8rem, 8vw, 6rem); line-height: .95;
-  letter-spacing: .01em; text-transform: uppercase;
+  font-family: var(--font-display); font-weight: 800;
+  font-size: clamp(2.4rem, 6vw, 4.4rem); line-height: 1;
+  letter-spacing: -.01em; text-transform: uppercase;
 }
 .display-sub {
   font-family: var(--font-body); font-weight: 700;
   font-size: clamp(1.9rem, 4.5vw, 3.1rem); line-height: 1.1; letter-spacing: -.02em;
 }
-.huge { font-size: clamp(4rem, 16vw, 11rem); line-height: 1.06; padding-top: .12em; }
+.huge { font-weight: 900; font-size: clamp(3.4rem, 13vw, 8.5rem); line-height: 1.02; padding-top: .06em; letter-spacing: -.02em; }
 .accent { color: var(--cyan); }
 .accent-line { color: var(--cyan); }
 .eyebrow, .kicker {
@@ -164,7 +192,7 @@ a { color: inherit; text-decoration: none; }
   transition: transform .35s var(--ease), box-shadow .35s var(--ease);
 }
 .pillar:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -30px rgba(14,64,71,.5); }
-.pillar-num { font-family: var(--font-display); font-size: 2.4rem; color: var(--mist); line-height: 1; }
+.pillar-num { font-family: var(--font-display); font-weight: 800; font-size: 2.2rem; color: var(--mist); line-height: 1; letter-spacing: -.02em; }
 .pillar h3 { font-size: 1.3rem; font-weight: 600; margin: 14px 0 10px; color: var(--deep); }
 .pillar p { color: #4a666b; font-size: .98rem; }
 
@@ -219,7 +247,7 @@ a { color: inherit; text-decoration: none; }
 .japao-inner { position: relative; z-index: 2; }
 .japao-head { text-align: center; margin-bottom: 60px; }
 .japao .huge { background: linear-gradient(180deg,#fff 40%, var(--cyan)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-.japao-dates { font-family: var(--font-serif); font-style: italic; font-size: clamp(1.2rem,2.5vw,1.7rem); color: var(--cyan-soft); margin-top: 6px; }
+.japao-dates { font-family: var(--font-body); font-weight: 500; font-size: clamp(1.1rem,2.3vw,1.5rem); letter-spacing: .04em; color: var(--cyan-soft); margin-top: 10px; }
 .japao-body { display: grid; grid-template-columns: 1.15fr 1fr; gap: 46px; align-items: start; }
 .amwc-tag { display: inline-block; font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; color: var(--cyan); border: 1px solid rgba(12,192,223,.4); padding: 7px 16px; border-radius: 100px; margin-bottom: 22px; }
 .japao-text h3 { font-size: clamp(1.5rem,3vw,2.1rem); font-weight: 700; line-height: 1.15; margin-bottom: 22px; }
@@ -229,7 +257,7 @@ a { color: inherit; text-decoration: none; }
 .jb-list { list-style: none; counter-reset: jb; }
 .jb-list li { counter-increment: jb; position: relative; padding: 11px 0 11px 42px; border-bottom: 1px solid rgba(255,255,255,.08); font-size: .95rem; color: rgba(255,255,255,.86); }
 .jb-list li:last-child { border-bottom: 0; }
-.jb-list li::before { content: counter(jb,decimal-leading-zero); position: absolute; left: 0; top: 11px; font-family: var(--font-display); font-size: .95rem; color: var(--cyan); }
+.jb-list li::before { content: counter(jb,decimal-leading-zero); position: absolute; left: 0; top: 11px; font-family: var(--font-display); font-weight: 800; font-size: .95rem; color: var(--cyan); }
 
 /* =========================================================
    FORMULÁRIO
