@@ -270,34 +270,82 @@ a { color: inherit; text-decoration: none; }
    PROGRAMA
    ========================================================= */
 .programa { background: linear-gradient(180deg, var(--paper) 0%, #fff 100%); }
-.program-events {
+.pillars { display: grid; grid-template-columns: repeat(3,1fr); gap: 26px; margin-top: 8px; }
+.pillar {
   position: relative;
-  max-width: 980px;
-  margin: -18px auto 44px;
-  filter: drop-shadow(0 24px 34px rgba(14,64,71,.14));
+  min-height: 274px;
+  perspective: 1200px;
+  border-radius: var(--radius);
+  outline: none;
 }
-.program-events::before {
+.pillar-inner {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  transform-style: preserve-3d;
+  transition: transform .7s var(--ease);
+}
+.pillar:hover .pillar-inner,
+.pillar:focus .pillar-inner,
+.pillar:focus-within .pillar-inner {
+  transform: rotateY(180deg);
+}
+.pillar-face {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  backface-visibility: hidden;
+  box-shadow: 0 24px 60px -42px rgba(14,64,71,.55);
+}
+.pillar-front {
+  background: var(--deep);
+  border: 1px solid rgba(52,124,137,.18);
+}
+.pillar-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(.96) contrast(1.02);
+  transform: scale(1.01);
+}
+.pillar:nth-child(3) .pillar-front img {
+  object-position: center 62%;
+}
+.pillar-front::after {
   content: "";
   position: absolute;
-  inset: 18% 8% -8%;
-  z-index: -1;
-  border-radius: 50%;
-  background: radial-gradient(ellipse, rgba(12,192,223,.16), transparent 68%);
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(6,35,42,.04) 0%, rgba(6,35,42,.28) 40%, rgba(6,35,42,.82) 100%),
+    radial-gradient(80% 70% at 50% 16%, rgba(255,255,255,.16), transparent 58%);
 }
-.program-events img {
-  width: 100%;
-  height: auto;
-  transform: rotate(-.4deg);
+.pillar-overlay {
+  position: absolute;
+  left: 28px;
+  right: 28px;
+  bottom: 28px;
+  z-index: 1;
+  color: #fff;
+  text-shadow: 0 12px 28px rgba(0,0,0,.38);
 }
-.pillars { display: grid; grid-template-columns: repeat(3,1fr); gap: 26px; margin-top: 30px; }
-.pillar {
-  background: rgba(255,255,255,.82); border-radius: var(--radius); padding: 38px 32px;
-  border: 1px solid rgba(52,124,137,.18); box-shadow: 0 24px 60px -42px rgba(14,64,71,.55);
-  transition: transform .35s var(--ease), box-shadow .35s var(--ease);
+.pillar-back {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(255,255,255,.92);
+  border: 1px solid rgba(52,124,137,.18);
+  padding: 38px 32px;
+  transform: rotateY(180deg);
 }
-.pillar:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -30px rgba(14,64,71,.5); }
+.pillar:focus-visible .pillar-face {
+  box-shadow: 0 0 0 4px rgba(12,192,223,.22), 0 24px 60px -42px rgba(14,64,71,.55);
+}
 .pillar-num { font-family: var(--font-display); font-weight: 800; font-size: 2.2rem; color: var(--mist); line-height: 1; letter-spacing: 0; }
+.pillar-front .pillar-num { color: rgba(255,255,255,.84); }
 .pillar h3 { font-size: 1.3rem; font-weight: 600; margin: 14px 0 10px; color: var(--deep); }
+.pillar-front h3 { color: #fff; margin-bottom: 0; }
 .pillar p { color: #4a666b; font-size: .98rem; }
 
 /* =========================================================
@@ -681,19 +729,16 @@ a { color: inherit; text-decoration: none; }
     letter-spacing: .015em;
   }
 
-  .pillar:hover .pillar-num,
   .benefit-card:hover .benefit-ico,
   .destino-card:hover .destino-info h3 {
     color: var(--cyan);
   }
 
-  .benefit-card:hover h3,
-  .pillar:hover h3 {
+  .benefit-card:hover h3 {
     transform: translateX(2px);
   }
 
   .benefit-card h3,
-  .pillar h3,
   .destino-info h3 {
     transition: color .28s var(--ease), transform .28s var(--ease);
   }
@@ -787,7 +832,6 @@ a { color: inherit; text-decoration: none; }
   .hero-inner { grid-template-columns: 1fr; }
   .hero-signature { min-height: 260px; padding: 20px 0; }
   .pillars, .benefit-grid, .destino-grid { grid-template-columns: 1fr 1fr; }
-  .program-events { margin: -10px auto 36px; }
   .japao-bg { background-position: center -70px; }
   .japao-body { grid-template-columns: 1fr; gap: 32px; }
   .japan-places { max-width: 560px; }
@@ -808,7 +852,6 @@ a { color: inherit; text-decoration: none; }
   .hero-lead { font-size: 1rem; }
   .hero-signature { min-height: 220px; }
   .pillars, .benefit-grid, .destino-grid { grid-template-columns: 1fr; }
-  .program-events { margin: -14px -10px 30px; }
   .japao-bg { background-position: 50% -38px; }
   .field-row { grid-template-columns: 1fr; }
   .form-copy { min-height: 360px; padding-right: 0; padding-top: 0; padding-bottom: 120px; }
