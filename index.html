@@ -19,8 +19,10 @@
   <!-- ===================== HEADER / NAV ===================== -->
   <header class="site-header" id="header">
     <div class="container header-inner">
-      <a href="#hero" class="brand" aria-label="Elit Members">
+      <a href="#hero" class="brand brand-lockup" aria-label="Elit Members e AMWC Japan">
         <img src="assets/elit-logo.png" alt="Elit Members" class="brand-logo" />
+        <span class="brand-divider" aria-hidden="true"></span>
+        <img src="assets/partners/ammc-japan.png" alt="AMWC Japan" class="partner-logo" />
       </a>
       <nav class="nav" aria-label="Navegação principal">
         <a href="#programa">O Programa</a>
@@ -47,19 +49,27 @@
     <div class="hero-bg" aria-hidden="true">
       <span class="leaf leaf-1"></span>
       <span class="leaf leaf-2"></span>
+      <span class="leaf leaf-3"></span>
       <span class="glow"></span>
     </div>
     <div class="container hero-inner">
-      <span class="eyebrow reveal">Programa de Membros · Ilikia · 2026</span>
-      <h1 class="hero-title reveal">Faça parte do<br /><span class="accent">Elit Members.</span></h1>
-      <p class="hero-lead reveal">
-        Ser um Elit Member é muito mais do que fazer parte de um programa.
-        É viver uma experiência única de <em>exclusividade</em>,
-        <em>reconhecimento</em> e <em>oportunidades</em>.
-      </p>
-      <div class="hero-actions reveal">
-        <a href="#programa" class="btn btn-cyan">Conheça mais do programa</a>
-        <a href="#japao" class="btn btn-ghost">Ver próximo destino →</a>
+      <div class="hero-copy">
+        <span class="eyebrow reveal">Programa de Membros · Ilikia · AMWC Japan</span>
+        <h1 class="hero-title reveal"><span class="nowrap">Faça parte do</span><br /><span class="accent">Elit Members.</span></h1>
+        <p class="hero-lead reveal">
+          Um convite para viver uma experiência única de <em>exclusividade</em>,
+          <em>reconhecimento</em> e <em>oportunidades</em> nos destinos que movem o mercado global da estética.
+        </p>
+        <div class="hero-actions reveal">
+          <a href="#programa" class="btn btn-cyan">Conheça o programa</a>
+          <a href="#japao" class="btn btn-ghost">Ver próximo destino →</a>
+        </div>
+      </div>
+
+      <div class="hero-signature reveal" aria-hidden="true">
+        <span class="signature-year">2026</span>
+        <span class="signature-line"></span>
+        <span class="signature-copy">Members Experience</span>
       </div>
     </div>
     <a href="#programa" class="scroll-cue" aria-label="Rolar para baixo"><span></span></a>
@@ -71,7 +81,7 @@
       <div class="section-head center">
         <span class="kicker">O Programa</span>
         <h2 class="display-sub">
-          Criado para quem busca <span class="accent">mais</span>.
+          <span class="nowrap">Criado para quem</span><br /><span class="accent">busca mais.</span>
         </h2>
         <p class="section-intro">
           Esse programa foi criado para você que busca mais conhecimento, mais networking,
@@ -113,32 +123,72 @@
 
       <div class="benefit-grid">
         <article class="benefit-card reveal">
-          <span class="benefit-ico">✦</span>
+          <span class="benefit-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 3.5l2.2 5.4 5.8.5-4.4 3.7 1.3 5.6L12 15.8l-4.9 2.9 1.3-5.6L4 9.4l5.8-.5L12 3.5z" />
+              <circle class="motion-pulse node-a" cx="12" cy="12" r="2.2" />
+            </svg>
+          </span>
           <h3>Experiências exclusivas</h3>
           <p>Nos melhores destinos do mundo, ao lado de um grupo seleto.</p>
         </article>
         <article class="benefit-card reveal">
-          <span class="benefit-ico">◆</span>
+          <span class="benefit-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M5 7h14" />
+              <path d="M5 12h14" />
+              <path d="M5 17h14" />
+              <circle class="motion-drift node-a" cx="9" cy="7" r="1.8" />
+              <circle class="motion-drift node-b" cx="15" cy="12" r="1.8" />
+              <circle class="motion-drift node-c" cx="11" cy="17" r="1.8" />
+            </svg>
+          </span>
           <h3>Pré-venda de lançamentos</h3>
           <p>Acesso antecipado e exclusivo aos novos produtos do portfólio.</p>
         </article>
         <article class="benefit-card reveal">
-          <span class="benefit-ico">★</span>
+          <span class="benefit-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M7 5h10v5a5 5 0 0 1-10 0V5z" />
+              <path d="M9 20h6" />
+              <path d="M12 15v5" />
+              <path class="motion-rise" d="M12 8.2l.8 1.7 1.9.2-1.4 1.2.4 1.9-1.7-1-1.7 1 .4-1.9-1.4-1.2 1.9-.2.8-1.7z" />
+            </svg>
+          </span>
           <h3>Participação VIP</h3>
           <p>Presença de destaque nos principais eventos da Ilikia.</p>
         </article>
         <article class="benefit-card reveal">
-          <span class="benefit-ico">✈</span>
+          <span class="benefit-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path class="motion-draw" d="M3.5 18.5c4.6-4.2 9.6-6.9 15.5-8" />
+              <path class="motion-plane" d="M21 6.5 13.5 14" />
+              <path d="M21 6.5 3.5 12.8l6.8 2.2 2.2 6.8L21 6.5z" />
+            </svg>
+          </span>
           <h3>Congressos internacionais</h3>
           <p>Participação nos maiores congressos de estética do planeta.</p>
         </article>
         <article class="benefit-card reveal">
-          <span class="benefit-ico">❖</span>
+          <span class="benefit-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="8" />
+              <path class="motion-globe" d="M4 12h16" />
+              <path d="M12 4c2.1 2.1 3.2 4.7 3.2 8s-1.1 5.9-3.2 8" />
+              <path d="M12 4c-2.1 2.1-3.2 4.7-3.2 8s1.1 5.9 3.2 8" />
+            </svg>
+          </span>
           <h3>Imersão em culturas</h3>
           <p>Vivência real em diferentes culturas e destinos ao redor do mundo.</p>
         </article>
         <article class="benefit-card reveal">
-          <span class="benefit-ico">◈</span>
+          <span class="benefit-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 18h16" />
+              <path d="M4 18 9 13l4 4 7-9" />
+              <path class="motion-draw" d="M15 8h5v5" />
+            </svg>
+          </span>
           <h3>Tendências internacionais</h3>
           <p>Imersão nas principais tendências que definem o mercado global.</p>
         </article>
@@ -161,28 +211,27 @@
 
       <div class="destino-grid">
         <article class="destino-card reveal" data-city="Paris">
-          <div class="destino-photo" data-label="Paris"></div>
+          <div class="destino-photo destino-paris" data-label="Paris"></div>
           <div class="destino-info">
             <h3>Paris</h3>
             <span>França</span>
           </div>
         </article>
         <article class="destino-card reveal" data-city="Monaco">
-          <div class="destino-photo" data-label="Mônaco"></div>
+          <div class="destino-photo destino-monaco" data-label="Mônaco"></div>
           <div class="destino-info">
             <h3>Mônaco</h3>
             <span>Principado de Mônaco</span>
           </div>
         </article>
         <article class="destino-card reveal" data-city="Georgia">
-          <div class="destino-photo" data-label="Geórgia"></div>
+          <div class="destino-photo destino-georgia" data-label="Geórgia"></div>
           <div class="destino-info">
             <h3>Geórgia</h3>
             <span>Cáucaso</span>
           </div>
         </article>
       </div>
-      <p class="photo-note">As imagens são marcadores — substitua pelos arquivos reais em <code>assets/destinos/</code>.</p>
     </div>
   </section>
 
@@ -197,8 +246,15 @@
       </div>
 
       <div class="japao-body">
+        <figure class="japan-places reveal">
+          <img src="assets/japan/japan-places.png" alt="Templo Sensoji, Shinjuku Gyoen, Palácio Imperial do Japão, Omotesando e Tokyo Skytree" />
+        </figure>
+
         <div class="japao-text reveal">
-          <span class="amwc-tag">AMWC Japan · Tóquio 2026</span>
+          <div class="amwc-box">
+            <span>AMWC Japan</span>
+            <strong>Tóquio 2026</strong>
+          </div>
           <h3>Tóquio, a capital da tecnologia &amp; inovação</h3>
           <p>
             Há mais de 20 anos, o Congresso Mundial de Medicina Estética e Antienvelhecimento
@@ -210,7 +266,9 @@
             liderando a inovação global e inspirando um novo patamar para a sua prática.
           </p>
         </div>
+      </div>
 
+      <div class="japao-package-grid">
         <aside class="japao-benefits reveal">
           <h4>O que está incluído</h4>
           <ol class="jb-list">
@@ -229,7 +287,7 @@
         </aside>
       </div>
 
-      <div class="center cta-row">
+      <div class="center cta-row japao-cta">
         <a href="#formulario" class="btn btn-cyan btn-lg">Quero saber sobre o pacote Japão</a>
       </div>
     </div>
@@ -239,6 +297,7 @@
   <section class="section formulario" id="formulario">
     <div class="container form-wrap">
       <div class="form-copy reveal">
+        <img src="assets/generated/plane-cutout.png" alt="" class="form-plane" aria-hidden="true" />
         <span class="kicker">Vagas limitadas</span>
         <h2 class="display-sub">Quer saber o nosso <span class="accent">próximo destino?</span></h2>
         <p>Preencha os dados para receber todas as informações sobre nossos pacotes e as condições exclusivas do programa Elit Members.</p>
@@ -300,7 +359,11 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <img src="assets/elit-logo.png" alt="Elit Members" class="footer-logo" />
+        <div class="footer-lockup">
+          <img src="assets/elit-logo.png" alt="Elit Members" class="footer-logo" />
+          <span class="brand-divider" aria-hidden="true"></span>
+          <img src="assets/partners/ammc-japan.png" alt="AMWC Japan" class="footer-partner-logo" />
+        </div>
         <p>Um programa Ilikia · em parceria com o AMWC Japan.</p>
       </div>
       <div class="footer-links">
