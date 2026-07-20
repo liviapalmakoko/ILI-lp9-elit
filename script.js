@@ -9,9 +9,18 @@
 
   /* ---- Header muda ao rolar ---- */
   var header = document.getElementById('header');
+  var mobileStickyCta = document.getElementById('mobileStickyCta');
+  var hero = document.getElementById('hero');
+  var formSection = document.getElementById('formulario');
   function onScroll() {
     if (window.scrollY > 40) header.classList.add('scrolled');
     else header.classList.remove('scrolled');
+
+    if (mobileStickyCta && hero && formSection) {
+      var passedHero = hero.getBoundingClientRect().bottom < window.innerHeight * .35;
+      var beforeForm = formSection.getBoundingClientRect().top > window.innerHeight * .68;
+      mobileStickyCta.classList.toggle('is-visible', passedHero && beforeForm);
+    }
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
@@ -47,6 +56,17 @@
   } else {
     reveals.forEach(function (el) { el.classList.add('in'); });
   }
+
+  /* ---- FAQ: mantém apenas uma resposta aberta por vez ---- */
+  var faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(function (item) {
+    item.addEventListener('toggle', function () {
+      if (!item.open) return;
+      faqItems.forEach(function (other) {
+        if (other !== item) other.open = false;
+      });
+    });
+  });
 
   /* ---- Galeria de experiências ---- */
   var gallery = document.getElementById('experienceGallery');
