@@ -48,6 +48,95 @@
     reveals.forEach(function (el) { el.classList.add('in'); });
   }
 
+  /* ---- Galeria de experiências ---- */
+  var gallery = document.getElementById('experienceGallery');
+  var lightbox = document.getElementById('galleryLightbox');
+
+  if (gallery && lightbox) {
+    var galleryItems = Array.from(gallery.querySelectorAll('.gallery-item'));
+    var lightboxImage = lightbox.querySelector('figure img');
+    var lightboxDestination = lightbox.querySelector('figcaption strong');
+    var lightboxCounter = lightbox.querySelector('figcaption span');
+    var lightboxClose = lightbox.querySelector('.lightbox-close');
+    var lightboxPrev = lightbox.querySelector('.lightbox-prev');
+    var lightboxNext = lightbox.querySelector('.lightbox-next');
+    var activeItems = galleryItems;
+    var activeDestination = '';
+    var currentPhoto = 0;
+
+    var destinationOptions = Array.from(document.querySelectorAll('.destination-option'));
+    var destinationPanels = Array.from(gallery.querySelectorAll('.destination-panel'));
+
+    function activateDestination(option) {
+      var panelId = option.dataset.panel;
+      destinationOptions.forEach(function (button) {
+        var active = button === option;
+        button.classList.toggle('is-active', active);
+        button.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      destinationPanels.forEach(function (panel) {
+        var active = panel.id === panelId;
+        panel.hidden = !active;
+        panel.classList.toggle('is-active', active);
+      });
+    }
+
+    destinationOptions.forEach(function (option, index) {
+      option.addEventListener('mouseenter', function () { activateDestination(option); });
+      option.addEventListener('focus', function () { activateDestination(option); });
+      option.addEventListener('click', function () { activateDestination(option); });
+      option.addEventListener('keydown', function (event) {
+        if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight' && event.key !== 'ArrowUp' && event.key !== 'ArrowDown') return;
+        event.preventDefault();
+        var forward = event.key === 'ArrowRight' || event.key === 'ArrowDown';
+        var next = destinationOptions[(index + (forward ? 1 : -1) + destinationOptions.length) % destinationOptions.length];
+        activateDestination(next);
+        next.focus();
+      });
+    });
+
+    function showPhoto(index) {
+      currentPhoto = (index + activeItems.length) % activeItems.length;
+      var item = activeItems[currentPhoto];
+      var image = item.querySelector('img');
+      lightboxImage.src = image.currentSrc || image.src;
+      lightboxImage.alt = image.alt;
+      lightboxDestination.textContent = activeDestination;
+      lightboxCounter.textContent = (currentPhoto + 1) + ' / ' + activeItems.length;
+    }
+
+    galleryItems.forEach(function (item) {
+      item.addEventListener('click', function () {
+        activeDestination = item.dataset.destination;
+        activeItems = galleryItems.filter(function (photo) {
+          return photo.dataset.destination === activeDestination;
+        });
+        showPhoto(activeItems.indexOf(item));
+        lightbox.showModal();
+        document.body.classList.add('lightbox-open');
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.close();
+      document.body.classList.remove('lightbox-open');
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightboxPrev.addEventListener('click', function () { showPhoto(currentPhoto - 1); });
+    lightboxNext.addEventListener('click', function () { showPhoto(currentPhoto + 1); });
+    lightbox.addEventListener('click', function (event) {
+      if (event.target === lightbox) closeLightbox();
+    });
+    lightbox.addEventListener('close', function () {
+      document.body.classList.remove('lightbox-open');
+    });
+    lightbox.addEventListener('keydown', function (event) {
+      if (event.key === 'ArrowLeft') showPhoto(currentPhoto - 1);
+      if (event.key === 'ArrowRight') showPhoto(currentPhoto + 1);
+    });
+  }
+
   /* ---- Máscara simples de telefone (BR) ---- */
   var tel = document.getElementById('telefone');
   if (tel) {

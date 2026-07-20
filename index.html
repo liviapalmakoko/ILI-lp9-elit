@@ -22,8 +22,7 @@
       <nav class="nav" aria-label="Navegação principal">
         <a href="#programa">O Programa</a>
         <a href="#beneficios">Benefícios</a>
-        <a href="#destinos">Destinos</a>
-        <a href="#japao">Próximo Destino</a>
+        <a href="#destinos">Galeria</a>
       </nav>
       <a href="#formulario" class="btn btn-cyan btn-sm nav-cta">Quero fazer parte</a>
       <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
@@ -33,8 +32,7 @@
     <div class="mobile-menu" id="mobileMenu">
       <a href="#programa">O Programa</a>
       <a href="#beneficios">Benefícios</a>
-      <a href="#destinos">Destinos</a>
-      <a href="#japao">Próximo Destino</a>
+      <a href="#destinos">Galeria</a>
       <a href="#formulario" class="btn btn-cyan">Quero fazer parte</a>
     </div>
   </header>
@@ -54,7 +52,7 @@
         </p>
         <div class="hero-actions reveal">
           <a href="#programa" class="btn btn-cyan">Conheça o programa</a>
-          <a href="#japao" class="btn btn-ghost">Ver próximo destino →</a>
+          <a href="#destinos" class="btn btn-ghost">Ver experiências →</a>
         </div>
       </div>
 
@@ -225,98 +223,64 @@
     </div>
   </section>
 
-  <!-- ===================== DESTINOS JÁ VISITADOS (SEÇÃO 04) ===================== -->
+  <!-- ===================== GALERIA DE EXPERIÊNCIAS (SEÇÃO 04) ===================== -->
   <section class="section destinos" id="destinos">
-    <div class="container">
+    <div class="container gallery-container">
       <div class="section-head center">
         <span class="kicker">Onde já estivemos</span>
         <h2 class="display-sub">Destinos que <span class="accent">já vivemos</span></h2>
-        <p class="section-intro">Experiências reais nos endereços mais desejados do mundo.</p>
+        <p class="section-intro">Memórias de experiências reais, conexões e descobertas nos destinos mais especiais do mundo.</p>
       </div>
 
-      <div class="destino-grid">
-        <article class="destino-card reveal" data-city="Paris">
-          <div class="destino-photo destino-paris" data-label="Paris"></div>
-          <div class="destino-info">
-            <h3>Paris</h3>
-            <span>França</span>
-          </div>
-        </article>
-        <article class="destino-card reveal" data-city="Monaco">
-          <div class="destino-photo destino-monaco" data-label="Mônaco"></div>
-          <div class="destino-info">
-            <h3>Mônaco</h3>
-            <span>Principado de Mônaco</span>
-          </div>
-        </article>
-        <article class="destino-card reveal" data-city="Georgia">
-          <div class="destino-photo destino-georgia" data-label="Geórgia"></div>
-          <div class="destino-info">
-            <h3>Geórgia</h3>
-            <span>Cáucaso</span>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
+      <div class="destination-browser reveal">
+        <div class="destination-list" role="tablist" aria-label="Escolha um destino">
+          <button class="destination-option is-active" type="button" role="tab" aria-selected="true" aria-controls="panel-monaco" data-panel="panel-monaco"><span>01</span><strong>Nice &amp; Mônaco</strong></button>
+          <button class="destination-option" type="button" role="tab" aria-selected="false" aria-controls="panel-georgia" data-panel="panel-georgia"><span>02</span><strong>Geórgia</strong></button>
+          <button class="destination-option" type="button" role="tab" aria-selected="false" aria-controls="panel-coreia" data-panel="panel-coreia"><span>03</span><strong>Coreia do Sul</strong></button>
+          <button class="destination-option" type="button" role="tab" aria-selected="false" aria-controls="panel-dubai" data-panel="panel-dubai"><span>04</span><strong>Dubai</strong></button>
+        </div>
 
-  <!-- ===================== PRÓXIMO DESTINO: JAPÃO 2026 ===================== -->
-  <section class="section japao" id="japao">
-    <div class="japao-bg" aria-hidden="true"></div>
-    <div class="container japao-inner">
-      <div class="japao-head reveal">
-        <span class="kicker light">Qual o nosso próximo destino?</span>
-        <h2 class="display huge">JAPÃO</h2>
-        <p class="japao-dates">04 a 13 de Setembro de 2026 · Tóquio</p>
-      </div>
-
-      <div class="japao-body">
-        <figure class="japan-places reveal">
-          <img src="assets/japan/japan-places.png" alt="Templo Sensoji, Shinjuku Gyoen, Palácio Imperial do Japão, Omotesando e Tokyo Skytree" />
-        </figure>
-
-        <div class="japao-text reveal">
-          <div class="amwc-box">
-            <span>AMWC Japan</span>
-            <strong>Tóquio 2026</strong>
+        <div class="destination-panels" id="experienceGallery" aria-label="Fotos das experiências Elit Members">
+          <div class="destination-panel is-active" id="panel-monaco" role="tabpanel" data-destination="Nice &amp; Mônaco">
+            <button class="gallery-item" type="button" data-destination="Nice &amp; Mônaco"><img src="assets/gallery/monaco-01.jpg" alt="Grupo Elit Members em Nice e Mônaco" width="1800" height="1202" loading="lazy" /></button>
+            <button class="gallery-item portrait" type="button" data-destination="Nice &amp; Mônaco"><img src="assets/gallery/monaco-02.jpg" alt="Participantes durante experiência em Nice e Mônaco" width="1200" height="1800" loading="lazy" /></button>
+            <button class="gallery-item portrait" type="button" data-destination="Nice &amp; Mônaco"><img src="assets/gallery/monaco-03.jpg" alt="Grupo durante experiência em Nice e Mônaco" width="1200" height="1800" loading="lazy" /></button>
           </div>
-          <h3>Tóquio, a capital da tecnologia &amp; inovação</h3>
-          <p>
-            Há mais de 20 anos, o Congresso Mundial de Medicina Estética e Antienvelhecimento
-            (AMWC) é um dos eventos globais mais prestigiados da área, reunindo as melhores
-            especialistas, pesquisadores e empresas do mundo com palestras de alto padrão.
-          </p>
-          <p>
-            Onde a cultura encontra a excelência: uma imersão nas tendências internacionais,
-            liderando a inovação global e inspirando um novo patamar para a sua prática.
-          </p>
+
+          <div class="destination-panel" id="panel-georgia" role="tabpanel" data-destination="Geórgia" hidden>
+            <button class="gallery-item" type="button" data-destination="Geórgia"><img src="assets/gallery/georgia-01.jpg" alt="Grupo Elit Members durante experiência na Geórgia" width="1800" height="1202" loading="lazy" /></button>
+            <button class="gallery-item" type="button" data-destination="Geórgia"><img src="assets/gallery/georgia-02.jpg" alt="Celebração do grupo durante viagem à Geórgia" width="1800" height="1202" loading="lazy" /></button>
+            <button class="gallery-item" type="button" data-destination="Geórgia"><img src="assets/gallery/georgia-03.jpg" alt="Participantes durante experiência cultural na Geórgia" width="1800" height="1202" loading="lazy" /></button>
+          </div>
+
+          <div class="destination-panel" id="panel-coreia" role="tabpanel" data-destination="Coreia do Sul" hidden>
+            <button class="gallery-item" type="button" data-destination="Coreia do Sul"><img src="assets/gallery/coreia-03.jpg" alt="Grupo Elit Members em palácio na Coreia do Sul" width="1800" height="1200" /></button>
+            <button class="gallery-item portrait" type="button" data-destination="Coreia do Sul"><img src="assets/gallery/coreia-01.jpg" alt="Participante durante experiência na Coreia do Sul" width="1200" height="1800" loading="lazy" /></button>
+            <button class="gallery-item portrait" type="button" data-destination="Coreia do Sul"><img src="assets/gallery/coreia-02.jpg" alt="Participante da experiência Elit Members na Coreia do Sul" width="1200" height="1800" loading="lazy" /></button>
+            <button class="gallery-item portrait" type="button" data-destination="Coreia do Sul"><img src="assets/gallery/coreia-04.jpg" alt="Momento da experiência Elit Members na Coreia do Sul" width="1200" height="1800" loading="lazy" /></button>
+            <button class="gallery-item portrait" type="button" data-destination="Coreia do Sul"><img src="assets/gallery/coreia-05.jpg" alt="Demonstração profissional durante viagem à Coreia do Sul" width="1200" height="1800" loading="lazy" /></button>
+          </div>
+
+          <div class="destination-panel" id="panel-dubai" role="tabpanel" data-destination="Dubai" hidden>
+            <button class="gallery-item" type="button" data-destination="Dubai"><img src="assets/gallery/dubai-04.jpg" alt="Grupo Elit Members durante experiência em Dubai" width="1800" height="1200" loading="lazy" /></button>
+            <button class="gallery-item" type="button" data-destination="Dubai"><img src="assets/gallery/dubai-01.jpg" alt="Grupo reunido durante experiência em Dubai" width="1800" height="1200" loading="lazy" /></button>
+            <button class="gallery-item portrait" type="button" data-destination="Dubai"><img src="assets/gallery/dubai-02.jpg" alt="Participantes visitando uma mesquita em Dubai" width="1200" height="1800" loading="lazy" /></button>
+            <button class="gallery-item" type="button" data-destination="Dubai"><img src="assets/gallery/dubai-03.jpg" alt="Participantes em evento durante viagem a Dubai" width="1800" height="1200" loading="lazy" /></button>
+          </div>
         </div>
       </div>
-
-      <div class="japao-package-grid">
-        <aside class="japao-benefits reveal">
-          <h4>O que está incluído</h4>
-          <ol class="jb-list">
-            <li>Clube Ilikia</li>
-            <li>Certificação dos 3 módulos de Aptos</li>
-            <li>Participação VIP no Iris by Ilikia 2026</li>
-            <li>Uma diária de hospedagem para o Iris</li>
-            <li>Pré-venda exclusiva nos lançamentos</li>
-            <li>Inscrição para 1 congresso nacional</li>
-            <li>Inscrição AMWC Tokyo 2026</li>
-            <li>Passagem opcional Tóquio (GRU–HND)</li>
-            <li>Hospedagem em Tóquio</li>
-            <li>Evento exclusivo da Ilikia em Tóquio</li>
-            <li>Videomaker para 1 evento na clínica ou conteúdo p/ Instagram</li>
-          </ol>
-        </aside>
-      </div>
-
-      <div class="center cta-row japao-cta">
-        <a href="#formulario" class="btn btn-cyan btn-lg">Quero saber sobre o pacote Japão</a>
-      </div>
     </div>
   </section>
+
+  <dialog class="gallery-lightbox" id="galleryLightbox" aria-label="Visualização ampliada da galeria">
+    <button class="lightbox-close" type="button" aria-label="Fechar galeria">×</button>
+    <button class="lightbox-nav lightbox-prev" type="button" aria-label="Foto anterior">‹</button>
+    <figure>
+      <img alt="" />
+      <figcaption><strong></strong><span></span></figcaption>
+    </figure>
+    <button class="lightbox-nav lightbox-next" type="button" aria-label="Próxima foto">›</button>
+  </dialog>
 
   <!-- ===================== FORMULÁRIO (SEÇÃO 05) ===================== -->
   <section class="section formulario" id="formulario">
@@ -394,8 +358,7 @@
       <div class="footer-links">
         <a href="#programa">O Programa</a>
         <a href="#beneficios">Benefícios</a>
-        <a href="#destinos">Destinos</a>
-        <a href="#japao">Próximo Destino</a>
+        <a href="#destinos">Galeria</a>
         <a href="#formulario">Quero participar</a>
       </div>
     </div>
